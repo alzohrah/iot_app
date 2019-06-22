@@ -1,50 +1,94 @@
 # Check your heart pulse & body temperature and send an alerts when it goes danger from an IoT Device and display the data collected in real-time using Node Red.
 ----------------------------------------------------------------------------------------------------
 
-### Create your Application on IBM Cloud
 
-1. Create an account or Log in to IBM Cloud [Click Here](ibm.biz/home-automation-workshop).
+## Overview
+Analyzing pictures became easier recently by using IBM Watson Visual Recognition service. This application will take an image from your computer camera and analyze it to give you the gender of persons and their age with the percentage of accuracy.
 
-2. Click on Catalog > Boilerplates > Internet of Things Platform Starter.
+## Learning Objectives
+After completing this project, you will understand how to;
+- Use Node-RED.
+- [Create IBM Watson Visual Recognition](#Create-IBM-Watson-Visual-Recognition)
+- [Create Node-red](#Create-Node-red)
+- [Create the flow](#Create-the-flow)
+- [Configure IBM Watson Visual Recognition on Node-RED](#Configure-IBM-Watson-Visual-Recognition-on-Node-RED)
 
-![1](https://user-images.githubusercontent.com/36006325/41722508-d6156ecc-7579-11e8-98f0-b399b3b9fbb9.png)
+## Prerequisites
+In order to complete this project, you will need the following prerequisites:
+- [IBM Cloud](http://ibm.biz/iot-cloud-signup) account - sign up if you don't have an account yet.
+- [Node-RED starter](https://console.bluemix.net/catalog/starters/node-red-starter)
+- [IBM Watson Visual Recognition](https://console.bluemix.net/catalog/services/visual-recognition) service.
 
-3. Enter a name for your application. Name must be unique. Then, click Create.
 
-![2](https://user-images.githubusercontent.com/36006325/41722563-fea70a4e-7579-11e8-85ab-461f60a198af.png)
+## Estimated Time
+- Create IBM Watson Visual Recognition should take less than 3 minutes.
+- Creating and configure your Node-RED application on IBM Cloud should take less than 10 minutes.
+- Developing the complete application on Node-RED should take a maximum 5 minutes.
+- Overall the time for completing this project should take approximately 20 minutes.
 
-4. When your app is running, select the app URL or type it into the browser to open the Node-RED flow editor
 
-![4](https://user-images.githubusercontent.com/36006325/41722643-2f775700-757a-11e8-9093-5e5d935a4d03.png)
 
-You should see Flow 1 running on IBM Cloud with a virtual thermometer. For now, you’ll work with the flow in the red square as shown below:
 
-![5](https://user-images.githubusercontent.com/36006325/41722728-62b73de2-757a-11e8-96d4-30735890518f.png)
+### Create Node-RED
+To create and configur Node-RED app, go to your IBM Cloud account and click Catalog then choice Starter Kits from the lift side then choice Node-RED Starter as shown in the following figure.
 
-### Connect Virtual sensor to your Application
+![`Create_node_red`](images/Create_node_red.png)
 
-1. After you start your Internet of Things Platform Starter instance, click the following link to connect a temperature simulator to the IBM IoT app In node as shown in blue in Flow 1: http://ibm.biz/iotsensor
 
-![6](https://user-images.githubusercontent.com/36006325/41722880-bf506506-757a-11e8-9498-6dbb0ea4e139.png)
 
-2. Copy the value in the upper-right corner of the virtual thermometer. In the image above, the value is 03075c7af9d9.
+After that, Fill-out the fields to create IoT Platform:
+- App name: has to be unique in the IBM cloud domain.
+- Host name: will be filled out automatically based on the App name.
 
-3. In the flow editor, double-click the IBM IoT App In node.
+click on Create 
+![`4`](images/4.png)
 
-![7](https://user-images.githubusercontent.com/36006325/41722940-e8979a10-757a-11e8-8e47-7f8b47cfda17.png)
+Then, wait seconds until shows the application shows Running and click on Visit App URL
 
-4. Paste the ID of the sensor into Device Id field. Click Done and then deploy the flow.
+![`5`](images/5.png)
 
-![8](https://user-images.githubusercontent.com/36006325/41723004-1060550a-757b-11e8-91b7-f3517a81b036.png)
+After that, for first time, it will ask you to setup the username and password. Please follow the instruction to secure your editor so only authorized users can access it. 
 
-5. Go to the virtual sensor and increase the temperature to 41° C or more.
-In the flow editor, note that the flow has three green output debug nodes that show flow data in the debug pane.
 
-6. Disconnect the top green Debug output payload node in the top flow by clicking the connecting line and pressing Delete on your keyboard. Disconnect the device data node on the bottom flow as shown in the following image. Then, click Deploy.
+![`6`](images/6.png)
 
-You might need to scroll down in the debug pane to see the simplified view of temperatures.
+Then, click on "Go to your Node-RED flow editor".
 
-![9](https://user-images.githubusercontent.com/36006325/41723228-91197186-757b-11e8-987c-f2c08365f4ba.png)
+![`7`](images/7.png)
+
+
+ 
+### Create the flow. 
+
+
+
+Copy the code form the [real-time_analyze_image_flow](real-time_analyze_image_flow.json) and import it into _IBM Cloud Node-RED_ clipboard:
+
+
+
+![`Import_flow`](images/Import_flow.png)
+
+
+Your flow should look like the following figure. 
+
+
+![`real-time_v`](images/real-time_v.png)
+
+In the first part of the flow. you will see node called 'Device payload' this node is used to simulate a data got from heart pulse sensor & body temperature sensor to your Application. 
+
+And in the second part of this application, is to get these data and send an alart if something happened wrong. 
+
+
+
+Finally, click on **Deploy** button in the upper right and click to 'Send Data' node to see the result. 
+
+
+
+
+**_Congratulations!!_**
+
+
+
 
 ### Add Email notifications to your flow
 
@@ -59,30 +103,9 @@ You’ll need an Email account.
 4. Click the pencil icon to edit and associate the Email node with the Email account of your choice.
 
 5. Click Done and then deploy the Node-RED flow.
-Whenever the temperature exceeds 40° Celsius, an email is sent. 
 
-### Display data collected in real-time
+Whenever there a danger situation, an email is sent. 
 
-1. Click on the hamburger menu on the top right corner
 
-2. Click on Manage Palette
-
-3. Click on the install tab
-
-4. Search for 'node-red-dashboard'
-
-5. Click on Install
-
-6. In the flow editor under dashboard, drag the chart node onto the canvas above the temp node so that you can display the temperature data as it is collected.
-
-7. Click the connecting port of the temp node on the right and connect it to the chart node.
-
-8. Double-click the chart node to edit its information.
-
-9. Once all the information has been entered, click on Deploy.
-
-10. Next click on the dashboard tab on the right pane and click on the link-out icon which will direct you to the Node-Red Dashboard consisting of the chart displayed.
-
-As the temperature of the sensor changes, you can see the changes reflect on the chart.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
