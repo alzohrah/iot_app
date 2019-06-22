@@ -3,15 +3,14 @@
 
 
 ## Overview
-Analyzing pictures became easier recently by using IBM Watson Visual Recognition service. This application will take an image from your computer camera and analyze it to give you the gender of persons and their age with the percentage of accuracy.
+Checking your heart pulse & body temperature is important. This application will semulate these prosess and show you how important and easy to do it by using Node-RED.
 
 ## Learning Objectives
 After completing this project, you will understand how to;
 - Use Node-RED.
-- [Create IBM Watson Visual Recognition](#Create-IBM-Watson-Visual-Recognition)
 - [Create Node-red](#Create-Node-red)
 - [Create the flow](#Create-the-flow)
-- [Configure IBM Watson Visual Recognition on Node-RED](#Configure-IBM-Watson-Visual-Recognition-on-Node-RED)
+- [Create the flow](#Add-Email-notifications-to-your-flow)
 
 ## Prerequisites
 In order to complete this project, you will need the following prerequisites:
@@ -21,10 +20,9 @@ In order to complete this project, you will need the following prerequisites:
 
 
 ## Estimated Time
-- Create IBM Watson Visual Recognition should take less than 3 minutes.
 - Creating and configure your Node-RED application on IBM Cloud should take less than 10 minutes.
 - Developing the complete application on Node-RED should take a maximum 5 minutes.
-- Overall the time for completing this project should take approximately 20 minutes.
+- Overall the time for completing this project should take approximately 15 minutes.
 
 
 
