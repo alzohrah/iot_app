@@ -10,7 +10,7 @@ After completing this project, you will understand how to;
 - Use Node-RED.
 - [Create Node-red](#Create-Node-red)
 - [Create the flow](#Create-the-flow)
-- [Create the flow](#Add-Email-notifications-to-your-flow)
+- [Add Email notifications to your flow](#Add-Email-notifications-to-your-flow)
 
 ## Prerequisites
 In order to complete this project, you will need the following prerequisites:
