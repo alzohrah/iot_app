@@ -62,7 +62,7 @@ Then, click on "Go to your Node-RED flow editor".
 
 
 
-Copy the code form the [real-time_analyze_image_flow](real-time_analyze_image_flow.json) and import it into _IBM Cloud Node-RED_ clipboard:
+Copy the code form the [check-up IoT application flow](check-up_IoT_application_flow.json) and import it into _IBM Cloud Node-RED_ clipboard:
 
 
 
