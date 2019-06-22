@@ -64,13 +64,13 @@ Copy the code form the [check-up IoT application flow](check-up_IoT_application_
 
 
 
-![`Import_flow`](images/check-up_flow.png)
+![`Import_flow`](images/Import_flow.png)
 
 
 Your flow should look like the following figure. 
 
 
-![`real-time_v`](images/real-time_v.png)
+![`check-up_flow`](images/check-up_flow.png)
 
 In the first part of the flow. you will see node called 'Device payload' this node is used to simulate a data got from heart pulse sensor & body temperature sensor to your Application. 
 
