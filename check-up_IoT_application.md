@@ -64,7 +64,7 @@ Copy the code form the [check-up IoT application flow](check-up_IoT_application_
 
 
 
-![`Import_flow`](images/Import_flow.png)
+![`Import_flow`](images/check-up_flow.png)
 
 
 Your flow should look like the following figure. 
